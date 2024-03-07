@@ -1,0 +1,20 @@
+{
+    "BATI": 0.1,
+    "RAF1_CPU" : 0.2,
+    "RAF1_GPU" : 0.3,
+    "RAF1_RAM" : 0.4,
+    "F1CI" : 0.5,
+    "BRMSETI" : 0.11,
+    "RARS_CPU" : 0.12,
+    "RARS_GPU" : 0.13,
+    "RARS_RAM" : 0.14,
+    "RMSPECI" : 0.15,
+    "Accuracy" : 0.6,
+    "F1Score" : 0.7,
+    "Precision" : 0.8,
+    "Recall" : 0.9,
+    "MSE" : 0.16,
+    "RSME" : 0.17,
+    "MAE" : 0.18,
+    "R2" : 0.19
+}

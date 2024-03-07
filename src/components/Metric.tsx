@@ -5,9 +5,13 @@ export const Metric = (props: {
 }) => {
   return (
     <div>
-      <h2>{props.name}</h2>
-      <img src={props.formulaImage} alt={props.formulaImage} />
-      <h3>{props.result}</h3>
+      <h3>{props.name}</h3>
+      <img
+        src={props.formulaImage}
+        alt={props.formulaImage}
+        style={{ width: "30%", height: "auto" }}
+      />
+      <h4>{props.result}</h4>
     </div>
   );
 };
