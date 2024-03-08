@@ -11,24 +11,24 @@ export const StandardMetric = (props: {
   result4: number;
 }) => {
   return (
-    <div className="outlinedComponent">
-      <h2>Standard Metrics</h2>
+    <div className="standard-metric">
+      <h1>Standard Metrics</h1>
       <div className="standard-metric-container">
         <div>
-          <h3 className="metric-name">{props.name1}</h3>
-          <h4 className="metric-result">{props.result1}</h4>
+          <h2 className="metric-name">{props.name1}</h2>
+          <h2 className="metric-result">{props.result1}</h2>
         </div>
         <div>
-          <h3 className="metric-name">{props.name2}</h3>
-          <h4 className="metric-result">{props.result2}</h4>
+          <h2 className="metric-name">{props.name2}</h2>
+          <h2 className="metric-result">{props.result2}</h2>
         </div>
         <div>
-          <h3 className="metric-name">{props.name3}</h3>
-          <h4 className="metric-result">{props.result3}</h4>
+          <h2 className="metric-name">{props.name3}</h2>
+          <h2 className="metric-result">{props.result3}</h2>
         </div>
         <div>
-          <h3 className="metric-name">{props.name4}</h3>
-          <h4 className="metric-result">{props.result4}</h4>
+          <h2 className="metric-name">{props.name4}</h2>
+          <h2 className="metric-result">{props.result4}</h2>
         </div>
       </div>
     </div>

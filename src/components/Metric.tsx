@@ -1,17 +1,19 @@
+import "../App.css";
+
 export const Metric = (props: {
   name: string;
   formulaImage?: string;
   result: number;
 }) => {
   return (
-    <div className="outlinedComponent">
-      <h3>{props.name}</h3>
+    <div className="metric-container">
+      <h2>{props.name}</h2>
       <img
+        className="formulaImage"
         src={props.formulaImage}
         alt={props.formulaImage}
-        style={{ width: "30%", height: "auto" }}
       />
-      <h4>{props.result}</h4>
+      <h2>{props.result}</h2>
     </div>
   );
 };

@@ -4,6 +4,10 @@ import { Metric } from "./components/Metric";
 import result from "./result.json";
 import { StandardMetric } from "./components/StandardMetric";
 import { SideBar } from "./components/SideBar";
+import { GraphMetric } from "./components/GraphMetric";
+import robustness from "./robustness.json";
+
+const chosenModel = "logistic_regression";
 
 const Type = {
   classification: "classification",
@@ -109,6 +113,23 @@ function App() {
     },
   ];
 
+  const robustnessData = [
+    {
+      name: "logistic_regression",
+      zero: robustness.logistic_regression[0],
+      quarter: robustness.logistic_regression[1],
+      half: robustness.logistic_regression[2],
+      third: robustness.logistic_regression[3],
+    },
+    {
+      name: "random_forest",
+      zero: robustness.random_forest[0],
+      quarter: robustness.random_forest[1],
+      half: robustness.random_forest[2],
+      third: robustness.random_forest[3],
+    },
+  ];
+
   // const standardClassMetrics = [
   //   {
   //     name: "Accuracy",
@@ -167,6 +188,31 @@ function App() {
               result={metric.result}
             />
           ))}
+      {metricType === Type.classification
+        ? robustnessData
+            .filter((robust) => robust.name === chosenModel)
+            .map((robust, index) => (
+              <GraphMetric
+                yaxis="F1_Score"
+                zero={robust.zero}
+                quarter={robust.quarter}
+                half={robust.half}
+                third={robust.third}
+                isF1Score={true}
+              />
+            ))
+        : robustnessData
+            .filter((robust) => robust.name === chosenModel)
+            .map((robust, index) => (
+              <GraphMetric
+                yaxis="R_Squared"
+                zero={robust.zero}
+                quarter={robust.quarter}
+                half={robust.half}
+                third={robust.third}
+                isF1Score={false}
+              />
+            ))}
       {metricType === Type.classification ? (
         <StandardMetric
           name1="Accuracy"
@@ -192,7 +238,9 @@ function App() {
           result4={result.R2 ? result.R2 : defaultResults.R2}
         />
       )}
-      <button onClick={toggleMetricsType}>Toggle Metrics Type</button>
+      <button className="btn1" onClick={toggleMetricsType}>
+        Toggle Metrics Type
+      </button>
     </div>
   );
 }

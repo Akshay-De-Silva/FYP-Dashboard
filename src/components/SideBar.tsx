@@ -19,6 +19,7 @@ export const SideBar = () => {
         <li>Lasso Regression</li>
         <li>Bayesian Ridge Regression</li>
       </ul>
+      <button>Toggle</button>
     </div>
   );
 };
