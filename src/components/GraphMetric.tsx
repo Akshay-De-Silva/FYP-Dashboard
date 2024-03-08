@@ -4,7 +4,6 @@ import {
   XAxis,
   YAxis,
   CartesianGrid,
-  Legend,
   ResponsiveContainer,
 } from "recharts";
 
@@ -35,7 +34,7 @@ export const GraphMetric = (props: {
   }
 
   return (
-    <div className="graph">
+    <div className="graph-containter">
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
           width={500}
@@ -49,9 +48,26 @@ export const GraphMetric = (props: {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="robustness" stroke="#FFFFFF" />
-          <YAxis stroke="#FFFFFF" />
-          <Legend />
+          <XAxis
+            dataKey="robustness"
+            stroke="#FFFFFF"
+            label={{
+              value: "% of Noise in the Dataset",
+              position: "bottom",
+              offset: -7,
+              style: { fill: "white" },
+            }}
+          />
+          <YAxis
+            stroke="#FFFFFF"
+            label={{
+              value: props.yaxis,
+              position: "insideLeft",
+              offset: 0,
+              angle: -90,
+              style: { fill: "white" },
+            }}
+          />
           <Line
             type="monotone"
             dataKey={props.yaxis}
