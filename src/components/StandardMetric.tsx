@@ -11,7 +11,7 @@ export const StandardMetric = (props: {
   result4: number;
 }) => {
   return (
-    <div>
+    <div className="outlinedComponent">
       <h2>Standard Metrics</h2>
       <div className="standard-metric-container">
         <div>

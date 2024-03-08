@@ -4,7 +4,7 @@ export const Metric = (props: {
   result: number;
 }) => {
   return (
-    <div>
+    <div className="outlinedComponent">
       <h3>{props.name}</h3>
       <img
         src={props.formulaImage}

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Metric } from "./components/Metric";
 import result from "./result.json";
 import { StandardMetric } from "./components/StandardMetric";
+import { SideBar } from "./components/SideBar";
 
 const Type = {
   classification: "classification",
@@ -148,6 +149,7 @@ function App() {
 
   return (
     <div className="App">
+      <SideBar />
       {metricType === Type.classification
         ? classMetrics.map((metric, index) => (
             <Metric
