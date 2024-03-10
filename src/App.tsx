@@ -15,6 +15,14 @@ const Type = {
 };
 
 function App() {
+  const [extWeight, setExtWeight] = useState(0.5);
+  const [perfWeight, setPerfWeight] = useState(0.5);
+
+  const handleExtWeightChange = (newExtWeight: number) => {
+    setExtWeight(newExtWeight);
+    setPerfWeight(Number((1 - newExtWeight).toFixed(1)));
+  };
+
   const [metricType, setMetricType] = useState(Type.classification);
 
   const toggleMetricsType = () => {
@@ -170,7 +178,12 @@ function App() {
 
   return (
     <div className="App">
-      <SideBar />
+      <SideBar
+        perfWeight={perfWeight}
+        extWeight={extWeight}
+        setExtWeight={handleExtWeightChange}
+        setPerfWeight={setPerfWeight}
+      />
       {metricType === Type.classification
         ? classMetrics.map((metric, index) => (
             <Metric
