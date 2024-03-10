@@ -1,4 +1,4 @@
-.App {
+.Dashboard {
   text-align: center;
   display: grid;
   grid-template-areas: 
@@ -44,6 +44,10 @@ html, body {
   scale: 0.99;
   border-radius: 0.25rem;
   background-color: #574c9a;
+}
+
+.formula:hover {
+  background-color: #6558a8;
 }
 
 .metricResult {

@@ -6,6 +6,7 @@ import {
   CartesianGrid,
   ResponsiveContainer,
 } from "recharts";
+import { useNavigate } from "react-router-dom";
 
 export const GraphMetric = (props: {
   yaxis: string;
@@ -15,6 +16,12 @@ export const GraphMetric = (props: {
   third: number;
   isF1Score: boolean;
 }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/details/Model_Robustness`);
+  };
+
   const data = [];
   const robustnessValues = ["0%", "25%", "50%", "75%"];
   const performanceValues = [
@@ -34,7 +41,7 @@ export const GraphMetric = (props: {
   }
 
   return (
-    <div className="graph-containter">
+    <div className="graph-containter" onClick={handleClick}>
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
           width={500}
