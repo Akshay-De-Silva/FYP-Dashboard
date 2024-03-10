@@ -1,6 +1,6 @@
 { 
     "BATI": "weightAcc~*~normalizedAcc~+~weightTime~*~(1~-~normalizedTime)",
-    "BRMSETI": "BRMSETI = weightRmse~*~normalizedRmse~+~weightTime~*~(1~-~normalizedTime)",
+    "BRMSETI": "weightRmse~*~normalizedRmse~+~weightTime~*~(1~-~normalizedTime)",
     "RAF1_CPU": "(weight F1~*~normalizedF1Score) + (weightCpu~*~(1~-~\\frac{averageCpuUsage~-~minCpuUsage}{maxCpuUsage~-~minCpuUsage}))",
     "RAF1_GPU": "(weight F1~*~normalizedF1Score) + (weightGpu~*~(1~-~\\frac{averageGpuUsage~-~minGpuUsage}{maxGpuUsage~-~minGpuUsage}))",
     "RAF1_RAM": "(weight F1~*~normalizedF1Score) + (weightRam~*~(1~-~\\frac{averageRamUsage~-~minRamUsage}{maxRamUsage~-~minRamUsage}))",

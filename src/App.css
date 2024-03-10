@@ -20,6 +20,7 @@ html, body {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  background-color: #483d8b;
 }
 
 .graph-containter {
@@ -123,6 +124,17 @@ html, body {
   text-decoration: underline;
 }
 
+.sidebarMainTitle {
+  margin: 0;
+  padding: 8px;
+  border: 2px solid white;
+  border-radius: 25px;
+}
+
+.sidebarWeight {
+  margin-bottom: 0;
+}
+
 .sideBtn {
   background-color: inherit;
   border: none;
@@ -141,6 +153,7 @@ html, body {
   cursor: pointer;
   font-family: inherit;
   font-size: inherit; 
+  margin: 0;
 }
 
 select {
@@ -160,4 +173,61 @@ select {
 
 select:hover {
   background-color: #574c9a;
+}
+
+.details {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #483d8b;
+  color: white;
+  text-align: center;
+}
+
+.detailName {
+  margin: 0;
+  padding: 60px;
+  padding-top: 200px;
+}
+
+.detailNameImg {
+  margin: 0;
+  padding-top: 50px;
+}
+
+.detailImage {
+  padding: 5px;
+  border-radius: 0.25rem;
+}
+
+.detailFormula {
+  margin: 0 auto;
+  margin-top: -40px;
+  padding: 5px;
+  border-radius: 0.25rem;
+  background-color: #574c9a;
+  width: 53%;
+}
+
+.detailDescrip {
+  width: 56%;
+  margin: 0 auto;
+  padding: 5px;
+  border-radius: 0.25rem;
+  padding: 30px;
+}
+
+.detailBack {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  color: white;
+  background-color: #574c9a;
+  border: none;
+  font-family: inherit;
+  font-size: inherit; 
+}
+
+.detailBack:hover {
+  background-color: #6558a8;
 }

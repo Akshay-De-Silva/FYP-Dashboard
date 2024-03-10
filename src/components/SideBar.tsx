@@ -22,8 +22,9 @@ export const SideBar = ({
 
   return (
     <div className="sidebar">
+      <h3 className="sidebarMainTitle">External Factor Evaluation Framework</h3>
       <h3>Select Weights</h3>
-      <h4>External Factor Weight</h4>
+      <h4 className="sidebarWeight">External Factor Weight</h4>
       <select value={extWeight} onChange={handleExtWeightChange}>
         {options.map((option) => (
           <option key={option} value={option}>
@@ -31,7 +32,7 @@ export const SideBar = ({
           </option>
         ))}
       </select>
-      <h4>Performance Weight</h4>
+      <h4 className="sidebarWeight">Performance Weight</h4>
       <p className="weightSelect">{perfWeight}</p>
       <h3>Select Model</h3>
       <h4 className="sidebarTitle">Classification</h4>
@@ -128,7 +129,6 @@ export const SideBar = ({
           </button>
         </li>
       </ul>
-      <button>Toggle</button>
     </div>
   );
 };
