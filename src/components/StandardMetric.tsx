@@ -12,7 +12,7 @@ export const StandardMetric = (props: {
 }) => {
   return (
     <div className="standard-metric">
-      <h1>Standardized Metrics</h1>
+      <h1 className="standard-metric-title">Standardized Metrics</h1>
       <div className="standard-metric-container">
         <div>
           <h2 className="metric-name">{props.name1}</h2>

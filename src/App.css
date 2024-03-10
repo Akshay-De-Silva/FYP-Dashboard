@@ -60,6 +60,10 @@ html, body {
   justify-content: center;
 }
 
+.standard-metric-title {
+  transform: translateY(10px);
+}
+
 .standard-metric {
   border: 2px solid black;
   grid-area: standard;
@@ -70,12 +74,18 @@ html, body {
 .metric-name {
   margin-bottom: 5px;
   margin-right: 30px; 
+  transform: translateY(-30px);
 }
 
 .metric-result {
   margin-top: 0;
   margin-bottom: 20px;
   margin-right: 30px; 
+  transform: translateY(-30px);
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #574c9a;
 }
 
 .sidebar {
@@ -98,6 +108,7 @@ html, body {
 .sidebar li {
   padding: 0.5rem 1rem;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .sidebar li:hover {
