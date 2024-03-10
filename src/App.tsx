@@ -6,6 +6,7 @@ import { StandardMetric } from "./components/StandardMetric";
 import { SideBar } from "./components/SideBar";
 import { GraphMetric } from "./components/GraphMetric";
 import robustness from "./robustness.json";
+import formula from "./formula.json";
 
 const chosenModel = "logistic_regression";
 
@@ -29,19 +30,6 @@ function App() {
     metricType === Type.classification
       ? setMetricType(Type.regression)
       : setMetricType(Type.classification);
-  };
-
-  const imageMap: { [key: string]: string } = {
-    BATI: "images/BATI.jpg",
-    BRMSETI: "images/BRMSETI.jpg",
-    RAF1_CPU: "images/RAF1_CPU.jpg",
-    RAF1_GPU: "images/RAF1_GPU.jpg",
-    RAF1_RAM: "images/RAF1_RAM.jpg",
-    RARS_CPU: "images/RARS_CPU.jpg",
-    RARS_GPU: "images/RARS_GPU.jpg",
-    RARS_RAM: "images/RARS_RAM.jpg",
-    F1CI: "images/F1CI.jpg",
-    RMSPECI: "images/RMSPECI.jpg",
   };
 
   const defaultResults = {
@@ -68,27 +56,27 @@ function App() {
   const classMetrics = [
     {
       name: "Balanced Accuracy-Time Index",
-      formulaImage: "BATI",
+      formulaName: "BATI",
       result: result.BATI ? result.BATI : defaultResults.BATI,
     },
     {
       name: "Resource Adjusted F1 Score (CPU)",
-      formulaImage: "RAF1_CPU",
+      formulaName: "RAF1_CPU",
       result: result.RAF1_CPU ? result.RAF1_CPU : defaultResults.RAF1_CPU,
     },
     {
       name: "Resource Adjusted F1 Score (GPU)",
-      formulaImage: "RAF1_GPU",
+      formulaName: "RAF1_GPU",
       result: result.RAF1_GPU ? result.RAF1_GPU : defaultResults.RAF1_GPU,
     },
     {
       name: "Resource Adjusted F1 Score (RAM)",
-      formulaImage: "RAF1_RAM",
+      formulaName: "RAF1_RAM",
       result: result.RAF1_RAM ? result.RAF1_RAM : defaultResults.RAF1_RAM,
     },
     {
       name: "F1 Cost Index",
-      formulaImage: "F1CI",
+      formulaName: "F1CI",
       result: result.F1CI ? result.F1CI : defaultResults.F1CI,
     },
   ];
@@ -96,27 +84,27 @@ function App() {
   const regMetrics = [
     {
       name: "Balanced RMSE-Time Index",
-      formulaImage: "BRMSETI",
+      formulaName: "BRMSETI",
       result: result.BRMSETI ? result.BRMSETI : defaultResults.BRMSETI,
     },
     {
       name: "Resource Adjusted R-Squared (CPU)",
-      formulaImage: "RARS_CPU",
+      formulaName: "RARS_CPU",
       result: result.RARS_CPU ? result.RARS_CPU : defaultResults.RARS_CPU,
     },
     {
       name: "Resource Adjusted R-Squared (GPU)",
-      formulaImage: "RARS_GPU",
+      formulaName: "RARS_GPU",
       result: result.RARS_GPU ? result.RARS_GPU : defaultResults.RARS_GPU,
     },
     {
       name: "Resource Adjusted R-Squared (RAM)",
-      formulaImage: "RARS_RAM",
+      formulaName: "RARS_RAM",
       result: result.RARS_RAM ? result.RARS_RAM : defaultResults.RARS_RAM,
     },
     {
       name: "RMSPE Cost Index",
-      formulaImage: "RMSPECI",
+      formulaName: "RMSPECI",
       result: result.RMSPECI ? result.RMSPECI : defaultResults.RMSPECI,
     },
   ];
@@ -189,7 +177,7 @@ function App() {
             <Metric
               key={index}
               name={metric.name}
-              formulaImage={imageMap[metric.formulaImage]}
+              formulaName={formula[metric.formulaName as keyof typeof formula]}
               result={metric.result}
             />
           ))
@@ -197,7 +185,7 @@ function App() {
             <Metric
               key={index}
               name={metric.name}
-              formulaImage={imageMap[metric.formulaImage]}
+              formulaName={formula[metric.formulaName as keyof typeof formula]}
               result={metric.result}
             />
           ))}

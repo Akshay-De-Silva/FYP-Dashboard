@@ -33,9 +33,25 @@ html, body {
   place-items: center;
 }
 
-.formulaImage {
-  width: 95%;
-  height: auto;
+.metricTitle {
+  margin-bottom: 0px;
+} 
+
+.formula {
+  margin-top: -40px;
+  padding: 5px;
+  font-size: 11px;
+  scale: 0.99;
+  border-radius: 0.25rem;
+  background-color: #574c9a;
+}
+
+.metricResult {
+  transform: translateY(-25px);
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #574c9a;
 }
 
 .standard-metric-container {
@@ -85,7 +101,7 @@ html, body {
 }
 
 .sidebar li:hover {
-  background-color: cornflowerblue;
+  background-color: #574c9a;
 }
 
 .sidebarTitle {
@@ -128,5 +144,5 @@ select {
 }
 
 select:hover {
-  background-color: #483d8b; /* Set your desired hover background color */
+  background-color: #574c9a;
 }

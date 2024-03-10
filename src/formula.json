@@ -1,0 +1,12 @@
+{ 
+    "BATI": "weightAcc~*~normalizedAcc~+~weightTime~*~(1~-~normalizedTime)",
+    "BRMSETI": "BRMSETI = weightRmse~*~normalizedRmse~+~weightTime~*~(1~-~normalizedTime)",
+    "RAF1_CPU": "(weight F1~*~normalizedF1Score) + (weightCpu~*~(1~-~\\frac{averageCpuUsage~-~minCpuUsage}{maxCpuUsage~-~minCpuUsage}))",
+    "RAF1_GPU": "(weight F1~*~normalizedF1Score) + (weightGpu~*~(1~-~\\frac{averageGpuUsage~-~minGpuUsage}{maxGpuUsage~-~minGpuUsage}))",
+    "RAF1_RAM": "(weight F1~*~normalizedF1Score) + (weightRam~*~(1~-~\\frac{averageRamUsage~-~minRamUsage}{maxRamUsage~-~minRamUsage}))",
+    "RARS_CPU": "(weight RS~*~normalizedRSquared) + (weightCpu~*~(1~-~\\frac{averageCpuUsage~-~minCpuUsage}{maxCpuUsage~-~minCpuUsage}))",
+    "RARS_GPU": "(weight RS~*~normalizedRSquared) + (weightGpu~*~(1~-~\\frac{averageGpuUsage~-~minGpuUsage}{maxGpuUsage~-~minGpuUsage}))",
+    "RARS_RAM": "(weight RS~*~normalizedRSquared) + (weightRam~*~(1~-~\\frac{averageRamUsage~-~minRamUsage}{maxRamUsage~-~minRamUsage}))",
+    "F1CI": "\\frac{2~*~costTP~*~TP}{2~*~costTP~*~TP~+~costFP~*~FP~+~costFN~*~FN}",
+    "RMSPECI": "costPerPercent~*~RMSPE"
+}
