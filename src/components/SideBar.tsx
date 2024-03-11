@@ -5,6 +5,9 @@ interface SideBarProps {
   perfWeight: number;
   setExtWeight: (newExtWeight: number) => void;
   setPerfWeight: (newPerfWeight: number) => void;
+  updateChosenModel: (model: string) => void;
+  setTypeToClass: () => void;
+  setTypeToReg: () => void;
 }
 
 const options = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9];
@@ -14,10 +17,23 @@ export const SideBar = ({
   perfWeight,
   setExtWeight,
   setPerfWeight,
+  updateChosenModel,
+  setTypeToClass,
+  setTypeToReg,
 }: SideBarProps) => {
   const handleExtWeightChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newExtWeight = parseFloat(e.target.value);
     setExtWeight(newExtWeight);
+  };
+
+  const handleClassModel = (model: string) => {
+    setTypeToClass();
+    updateChosenModel(model);
+  };
+
+  const handleRegModel = (model: string) => {
+    setTypeToReg();
+    updateChosenModel(model);
   };
 
   return (
@@ -40,7 +56,7 @@ export const SideBar = ({
         <li>
           <button
             className="sideBtn"
-            onClick={() => console.log("Logistic Regression")}
+            onClick={() => handleClassModel("logistic_regression")}
           >
             Logistic Regression
           </button>
@@ -99,7 +115,7 @@ export const SideBar = ({
         <li>
           <button
             className="sideBtn"
-            onClick={() => console.log("Linear Regression")}
+            onClick={() => handleRegModel("linear_regression")}
           >
             Linear Regression
           </button>

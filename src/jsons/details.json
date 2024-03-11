@@ -1,6 +1,7 @@
 {
     "BATI": {
         "name": "Balanced Accuracy Time Index", 
+        "type": "classification",
         "formula": "BATI=weightAcc~*~normalizedAcc~+~weightTime~*~(1~-~normalizedTime)", 
         "formulaBreakdown": {
             "1": "weightAcc = User assigned performance weight", 
@@ -12,6 +13,7 @@
     },
     "RAF1_CPU" : {
         "name": "Resource-Adjusted F1 Score (CPU)", 
+        "type": "classification",
         "formula": "RAF1(CPU)=(weight F1~*~normalizedF1Score) + (weightCpu~*~(1~-~\\frac{averageCpuUsage~-~minCpuUsage}{maxCpuUsage~-~minCpuUsage}))", 
         "formulaBreakdown": {
             "1": "weightF1 = User assigned performance weight", 
@@ -25,6 +27,7 @@
     },
     "RAF1_GPU" : {
         "name": "Resource-Adjusted F1 Score (GPU)", 
+        "type": "classification",
         "formula": "RAF1(GPU)=(weight F1~*~normalizedF1Score) + (weightGpu~*~(1~-~\\frac{averageGpuUsage~-~minGpuUsage}{maxGpuUsage~-~minGpuUsage}))", 
         "formulaBreakdown": {
             "1": "weightF1 = User assigned performance weight", 
@@ -38,6 +41,7 @@
     },
     "RAF1_RAM" : {
         "name": "Resource-Adjusted F1 Score (RAM)", 
+        "type": "classification",
         "formula": "RAF1(RAM)=(weight F1~*~normalizedF1Score) + (weightRam~*~(1~-~\\frac{averageRamUsage~-~minRamUsage}{maxRamUsage~-~minRamUsage}))", 
         "formulaBreakdown": {
             "1": "weightF1 = User assigned performance weight", 
@@ -51,6 +55,7 @@
     },
     "F1CI" : {
         "name": "F1-Cost Index", 
+        "type": "classification",
         "formula": "F1CI=\\frac{2~*~costTP~*~TP}{2~*~costTP~*~TP~+~costFP~*~FP~+~costFN~*~FN}", 
         "formulaBreakdown": {
             "1": "TP, FP, FN = True Positive, False Positive, False Negative", 
@@ -60,6 +65,7 @@
     },
     "BRMSETI" : {
         "name": "Balanced RMSE Time Index", 
+        "type": "regression",
         "formula": "BRMSETI=weightRmse~*~normalizedRmse~+~weightTime~*~(1~-~normalizedTime)", 
         "formulaBreakdown": {
             "1": "weightRmse = User assigned performance weight", 
@@ -71,6 +77,7 @@
     },
     "RARS_CPU" : {
         "name": "Resource-Adjusted R-Squared (CPU)", 
+        "type": "regression",
         "formula": "RARS(CPU)=(weightRS~*~normalizedRSquared) + (weightCpu~*~(1~-~\\frac{averageCpuUsage~-~minCpuUsage}{maxCpuUsage~-~minCpuUsage}))", 
         "formulaBreakdown": {
             "1": "weightRS = User assigned performance weight", 
@@ -84,6 +91,7 @@
     },
     "RARS_GPU" : {
         "name": "Resource-Adjusted R-Squared (GPU)", 
+        "type": "regression",
         "formula": "RARS(GPU)=(weight RS~*~normalizedRSquared) + (weightGpu~*~(1~-~\\frac{averageGpuUsage~-~minGpuUsage}{maxGpuUsage~-~minGpuUsage}))", 
         "formulaBreakdown": {
             "1": "weightRS = User assigned performance weight", 
@@ -97,6 +105,7 @@
     },
     "RARS_RAM" : {
         "name": "Resource-Adjusted R-Squared (RAM)", 
+        "type": "regression",
         "formula": "RARS(RAM)=(weight RS~*~normalizedRSquared) + (weightRam~*~(1~-~\\frac{averageRamUsage~-~minRamUsage}{maxRamUsage~-~minRamUsage}))", 
         "formulaBreakdown": {
             "1": "weightRS = User assigned performance weight", 
@@ -110,6 +119,7 @@
     },
     "RMSPECI" : {
         "name": "RMSPE-Cost Index", 
+        "type": "regression",
         "formula": "RMSPECI=costPerPercent~*~RMSPE", 
         "formulaBreakdown": {
             "1": "RMSPE = Root Mean Squared Percentage Error", 
@@ -119,6 +129,7 @@
     },
     "Model_Robustness": {
         "name": "Model Robustness", 
+        "type": "classification",
         "formula": "../images/robustGraph.png", 
         "formulaBreakdown": "",
         "description": "Model Robustness Index is a metric portrayed in graphical form and its focus is on the comparison of the model’s performance to percentage noise in the dataset, this was done in order to show how a model will hold up performance wise in scenarios where the dataset is gradually corrupted with noise or garbage data. The graphical metric has either F1 Score or R-Squared on the Y axis depending if the model is classification or regression based, and Noise% on the X axis."

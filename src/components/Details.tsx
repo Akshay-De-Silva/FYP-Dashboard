@@ -44,7 +44,11 @@ export const Details = () => {
       <button
         className="detailBack"
         onClick={() => {
-          navigate("/");
+          if (metricDetails.type === "regression") {
+            navigate("/regression");
+          } else {
+            navigate("/classification");
+          }
         }}
       >
         Return to Dashboard

@@ -8,14 +8,13 @@ import result from "../jsons/result.json";
 import robustness from "../jsons/robustness.json";
 import formula from "../jsons/formula.json";
 
-const chosenModel = "logistic_regression";
+export const Dashboard = (props: { metricType: string }) => {
+  const [chosenModel, setChosenModel] = useState("logistic_regression");
 
-const Type = {
-  classification: "classification",
-  regression: "regression",
-};
+  const updateChosenModel = (model: string) => {
+    setChosenModel(model);
+  };
 
-export const Dashboard = () => {
   const [extWeight, setExtWeight] = useState(0.5);
   const [perfWeight, setPerfWeight] = useState(0.5);
 
@@ -24,12 +23,25 @@ export const Dashboard = () => {
     setPerfWeight(Number((1 - newExtWeight).toFixed(1)));
   };
 
-  const [metricType, setMetricType] = useState(Type.classification);
+  const Type = {
+    classification: "classification",
+    regression: "regression",
+  };
 
-  const toggleMetricsType = () => {
-    metricType === Type.classification
-      ? setMetricType(Type.regression)
-      : setMetricType(Type.classification);
+  const [metricType, setMetricType] = useState(() => {
+    if (props.metricType === "regression") {
+      return Type.regression;
+    } else {
+      return Type.classification;
+    }
+  });
+
+  const setTypeToClass = () => {
+    setMetricType(Type.classification);
+  };
+
+  const setTypeToReg = () => {
+    setMetricType(Type.regression);
   };
 
   const defaultResults = {
@@ -118,11 +130,11 @@ export const Dashboard = () => {
       third: robustness.logistic_regression[3],
     },
     {
-      name: "random_forest",
-      zero: robustness.random_forest[0],
-      quarter: robustness.random_forest[1],
-      half: robustness.random_forest[2],
-      third: robustness.random_forest[3],
+      name: "linear_regression",
+      zero: robustness.linear_regression[0],
+      quarter: robustness.linear_regression[1],
+      half: robustness.linear_regression[2],
+      third: robustness.linear_regression[3],
     },
   ];
 
@@ -133,6 +145,9 @@ export const Dashboard = () => {
         extWeight={extWeight}
         setExtWeight={handleExtWeightChange}
         setPerfWeight={setPerfWeight}
+        updateChosenModel={updateChosenModel}
+        setTypeToClass={setTypeToClass}
+        setTypeToReg={setTypeToReg}
       />
       {metricType === Type.classification
         ? classMetrics.map((metric, index) => (
@@ -203,9 +218,6 @@ export const Dashboard = () => {
           result4={result.R2 ? result.R2 : defaultResults.R2}
         />
       )}
-      <button className="btn1" onClick={toggleMetricsType}>
-        Toggle Metrics Type
-      </button>
     </div>
   );
 };

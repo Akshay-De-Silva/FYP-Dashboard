@@ -7,7 +7,15 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/" element={<Dashboard metricType="classification" />} />
+          <Route
+            path="/classification"
+            element={<Dashboard metricType="classification" />}
+          />
+          <Route
+            path="/regression"
+            element={<Dashboard metricType="regression" />}
+          />
           <Route path="/details/:metric" element={<Details />} />
         </Routes>
       </Router>
