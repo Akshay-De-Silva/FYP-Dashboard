@@ -21,7 +21,7 @@
             "5": "minCpuUsage = Minimum CPU usage of any model during observation period",
             "6": "maxCpuUsage = Maximum CPU usage of any model during observation period"
         },
-        "description": ""
+        "description": "Resource-Adjusted F1 Score (CPU) is a metric that provides a comparison between a system resource (in this case CPU% usage) and the performance of the model in question with its F1 Score. Due to the varying nature of system resource usage when doing any task, multiple measurements have to be taken across multiple epochs to get an overall average resource usage during that time frame. Both the performance and external factor are normalized across all the models being compared using min-max normalization in order to give insights to which model performs the best with the current conditions and with the chosen weights set by the user. The addition of '1-' to the resource normalization is to make the formula treat lower use of resources as a positive and higher resource usage to be considered as a negative. Default weights are 0.5 for both performance and external factor."
     },
     "RAF1_GPU" : {
         "name": "Resource-Adjusted F1 Score (GPU)", 
@@ -34,7 +34,7 @@
             "5": "minGpuUsage = Minimum GPU usage of any model during observation period",
             "6": "maxGpuUsage = Maximum GPU usage of any model during observation period"
         },
-        "description": ""
+        "description": "Resource-Adjusted F1 Score (GPU) is a metric that provides a comparison between a system resource (in this case GPU VRAM usage) and the performance of the model in question with its F1 Score. Due to the varying nature of system resource usage when doing any task, multiple measurements have to be taken across multiple epochs to get an overall average resource usage during that time frame. Both the performance and external factor are normalized across all the models being compared using min-max normalization in order to give insights to which model performs the best with the current conditions and with the chosen weights set by the user. The addition of '1-' to the resource normalization is to make the formula treat lower use of resources as a positive and higher resource usage to be considered as a negative. Default weights are 0.5 for both performance and external factor."
     },
     "RAF1_RAM" : {
         "name": "Resource-Adjusted F1 Score (RAM)", 
@@ -47,7 +47,7 @@
             "5": "minRamUsage = Minimum RAM usage of any model during observation period",
             "6": "maxRamuUsage = Maximum RAM usage of any model during observation period"
         },
-        "description": ""
+        "description": "Resource-Adjusted F1 Score (RAM) is a metric that provides a comparison between a system resource (in this case RAM usage) and the performance of the model in question with its F1 Score. Due to the varying nature of system resource usage when doing any task, multiple measurements have to be taken across multiple epochs to get an overall average resource usage during that time frame. Both the performance and external factor are normalized across all the models being compared using min-max normalization in order to give insights to which model performs the best with the current conditions and with the chosen weights set by the user. The addition of '1-' to the resource normalization is to make the formula treat lower use of resources as a positive and higher resource usage to be considered as a negative. Default weights are 0.5 for both performance and external factor."
     },
     "F1CI" : {
         "name": "F1-Cost Index", 
@@ -56,7 +56,7 @@
             "1": "TP, FP, FN = True Positive, False Positive, False Negative", 
             "2": "costTP, costFP, costFN = Estimated costs to an entity for True Positive, False Positive, and False Negative predictions"
         },
-        "description": ""
+        "description": "The metric F1-Cost Index is based on the Safety Score metric developed by (Salman et al., 2020) in which they added cost weights to the True Positive, True Negative, False Positive, and False Negative parameters of the standard accuracy equation to gauge how much it would cost the individual / corporation should the model in question predicate a specific output. The cost values would be set by a system administrator in collaboration with crisis management employees. For example, let us say that TP costs one thousand dollars, TN cost one thousand dollars, FP cost ten thousand dollars, and FN cost twenty thousand dollars. In this scenario when the Safety score was calculated the few instances of FP and FN would heavily weigh on the metrics output value, making it much more sensitive based on the few mistakes made by the model. In this vein, the author has noted that while this metric is useful and provides valuable information, the base metric of choice has much to be desired, as accuracy can be very unreliable at times, especially since it is susceptible to bias in the case of an imbalanced dataset. Therefore, the author has chosen to utilize F1 score instead of accuracy in order to give more reliable results that are less biased in imbalanced datasets."
     },
     "BRMSETI" : {
         "name": "Balanced RMSE Time Index", 
@@ -80,7 +80,7 @@
             "5": "minCpuUsage = Minimum CPU usage of any model during observation period",
             "6": "maxCpuUsage = Maximum CPU usage of any model during observation period"
         },
-        "description": ""
+        "description": "Resource-Adjusted R-Squared (CPU) is a metric that provides a comparison between a system resource (in this case CPU% usage) and the performance of the model in question with its R-Squared score. Due to the varying nature of system resource usage when doing any task, multiple measurements have to be taken across multiple epochs to get an overall average resource usage during that time frame. Both the performance and external factor are normalized across all the models being compared using min-max normalization in order to give insights to which model performs the best with the current conditions and with the chosen weights set by the user. The addition of '1-' to the resource normalization is to make the formula treat lower use of resources as a positive and higher resource usage to be considered as a negative. Default weights are 0.5 for both performance and external factor."
     },
     "RARS_GPU" : {
         "name": "Resource-Adjusted R-Squared (GPU)", 
@@ -93,7 +93,7 @@
             "5": "minGpuUsage = Minimum GPU usage of any model during observation period",
             "6": "maxGpuUsage = Maximum GPU usage of any model during observation period"
         },
-        "description": ""
+        "description": "Resource-Adjusted R-Squared (GPU) is a metric that provides a comparison between a system resource (in this case GPU VRAM usage) and the performance of the model in question with its R-Squared score. Due to the varying nature of system resource usage when doing any task, multiple measurements have to be taken across multiple epochs to get an overall average resource usage during that time frame. Both the performance and external factor are normalized across all the models being compared using min-max normalization in order to give insights to which model performs the best with the current conditions and with the chosen weights set by the user. The addition of '1-' to the resource normalization is to make the formula treat lower use of resources as a positive and higher resource usage to be considered as a negative. Default weights are 0.5 for both performance and external factor."
     },
     "RARS_RAM" : {
         "name": "Resource-Adjusted R-Squared (RAM)", 
@@ -106,7 +106,7 @@
             "5": "minRamUsage = Minimum RAM usage of any model during observation period",
             "6": "maxRamuUsage = Maximum RAM usage of any model during observation period"
         },
-        "description": ""
+        "description": "Resource-Adjusted R-Squared (RAM) is a metric that provides a comparison between a system resource (in this case RAM usage) and the performance of the model in question with its R-Squared score. Due to the varying nature of system resource usage when doing any task, multiple measurements have to be taken across multiple epochs to get an overall average resource usage during that time frame. Both the performance and external factor are normalized across all the models being compared using min-max normalization in order to give insights to which model performs the best with the current conditions and with the chosen weights set by the user. The addition of '1-' to the resource normalization is to make the formula treat lower use of resources as a positive and higher resource usage to be considered as a negative. Default weights are 0.5 for both performance and external factor."
     },
     "RMSPECI" : {
         "name": "RMSPE-Cost Index", 
@@ -115,12 +115,12 @@
             "1": "RMSPE = Root Mean Squared Percentage Error", 
             "2": "costPerPercent = Estimated cost per percentage error differnce"
         },
-        "description": ""
+        "description": "In the vein of the F1CI metric, the RMSPE-Cost Index is a regression interpretation of the metric where instead of assigning weights to each of the parameters of the confusion matrix, instead the system admin has to approximate the cost per percentage difference from the actual result. This is multiplied by the RMSPE which is the percentage difference between the predicted results and actual result of the regression model."
     },
     "Model_Robustness": {
         "name": "Model Robustness", 
         "formula": "../images/robustGraph.png", 
         "formulaBreakdown": "",
-        "description": "placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder"
+        "description": "Model Robustness Index is a metric portrayed in graphical form and its focus is on the comparison of the model’s performance to percentage noise in the dataset, this was done in order to show how a model will hold up performance wise in scenarios where the dataset is gradually corrupted with noise or garbage data. The graphical metric has either F1 Score or R-Squared on the Y axis depending if the model is classification or regression based, and Noise% on the X axis."
     }
 }

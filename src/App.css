@@ -206,13 +206,12 @@ select:hover {
 
 .detailNameImg {
   margin: 0;
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
 .detailImage {
   padding: 5px;
   border-radius: 0.25rem;
-  width: 20%;
 }
 
 .detailFormula {
