@@ -27,6 +27,17 @@ export const Details = () => {
           <p className="detailFormula">
             <BlockMath math={metricDetails.formula} />
           </p>
+          {metricDetails.formulaBreakdown && (
+            <ul className="detailBreak">
+              {Object.entries(metricDetails.formulaBreakdown).map(
+                ([key, explanation]) => (
+                  <li key={key}>
+                    <span>{explanation}</span>
+                  </li>
+                )
+              )}
+            </ul>
+          )}
         </div>
       )}
       <p className="detailDescrip">{metricDetails.description}</p>

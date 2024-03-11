@@ -209,6 +209,25 @@ select:hover {
   width: 53%;
 }
 
+.detailBreak {
+  margin: 0 auto;
+  padding: 5px;
+  border-radius: 0.25rem;
+  padding: 30px;
+  font-weight: bold;
+}
+
+.details ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.details li {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
 .detailDescrip {
   width: 56%;
   margin: 0 auto;

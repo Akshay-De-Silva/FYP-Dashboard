@@ -2,56 +2,125 @@
     "BATI": {
         "name": "Balanced Accuracy Time Index", 
         "formula": "BATI=weightAcc~*~normalizedAcc~+~weightTime~*~(1~-~normalizedTime)", 
+        "formulaBreakdown": {
+            "1": "weightAcc = User assigned performance weight", 
+            "2": "weightTime = User assigned external factor weight", 
+            "3": "normalizedAcc = Min-max normalization of multiple model's accuracy", 
+            "4": "normalizedTime = Min-max normalization of multiple model's time duration (to train or test)"
+        },
         "description": "placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder"
     },
     "RAF1_CPU" : {
         "name": "Resource-Adjusted F1 Score (CPU)", 
         "formula": "RAF1(CPU)=(weight F1~*~normalizedF1Score) + (weightCpu~*~(1~-~\\frac{averageCpuUsage~-~minCpuUsage}{maxCpuUsage~-~minCpuUsage}))", 
+        "formulaBreakdown": {
+            "1": "weightF1 = User assigned performance weight", 
+            "2": "weightCpu = User assigned external factor weight", 
+            "3": "normalizedF1Score = Min-max normalization of multiple model's F1 scores", 
+            "4": "averageCpuUsage = Average CPU usage of the chosen model during observation period",
+            "5": "minCpuUsage = Minimum CPU usage of any model during observation period",
+            "6": "maxCpuUsage = Maximum CPU usage of any model during observation period"
+        },
         "description": ""
     },
     "RAF1_GPU" : {
         "name": "Resource-Adjusted F1 Score (GPU)", 
         "formula": "RAF1(GPU)=(weight F1~*~normalizedF1Score) + (weightGpu~*~(1~-~\\frac{averageGpuUsage~-~minGpuUsage}{maxGpuUsage~-~minGpuUsage}))", 
+        "formulaBreakdown": {
+            "1": "weightF1 = User assigned performance weight", 
+            "2": "weightGpu = User assigned external factor weight", 
+            "3": "normalizedF1Score = Min-max normalization of multiple model's F1 scores", 
+            "4": "averageGpuUsage = Average GPU usage of the chosen model during observation period",
+            "5": "minGpuUsage = Minimum GPU usage of any model during observation period",
+            "6": "maxGpuUsage = Maximum GPU usage of any model during observation period"
+        },
         "description": ""
     },
     "RAF1_RAM" : {
         "name": "Resource-Adjusted F1 Score (RAM)", 
         "formula": "RAF1(RAM)=(weight F1~*~normalizedF1Score) + (weightRam~*~(1~-~\\frac{averageRamUsage~-~minRamUsage}{maxRamUsage~-~minRamUsage}))", 
+        "formulaBreakdown": {
+            "1": "weightF1 = User assigned performance weight", 
+            "2": "weightRam = User assigned external factor weight", 
+            "3": "normalizedF1Score = Min-max normalization of multiple model's F1 scores", 
+            "4": "averageRamUsage = Average RAM usage of the chosen model during observation period",
+            "5": "minRamUsage = Minimum RAM usage of any model during observation period",
+            "6": "maxRamuUsage = Maximum RAM usage of any model during observation period"
+        },
         "description": ""
     },
     "F1CI" : {
         "name": "F1-Cost Index", 
         "formula": "F1CI=\\frac{2~*~costTP~*~TP}{2~*~costTP~*~TP~+~costFP~*~FP~+~costFN~*~FN}", 
+        "formulaBreakdown": {
+            "1": "TP, FP, FN = True Positive, False Positive, False Negative", 
+            "2": "costTP, costFP, costFN = Estimated costs to an entity for True Positive, False Positive, and False Negative predictions"
+        },
         "description": ""
     },
     "BRMSETI" : {
         "name": "Balanced RMSE Time Index", 
         "formula": "BRMSETI=weightRmse~*~normalizedRmse~+~weightTime~*~(1~-~normalizedTime)", 
+        "formulaBreakdown": {
+            "1": "weightRmse = User assigned performance weight", 
+            "2": "weightTime = User assigned external factor weight", 
+            "3": "normalizedRmse = Min-max normalization of multiple model's RMSE", 
+            "4": "normalizedTime = Min-max normalization of multiple model's time duration (to train or test)"
+        },
         "description": ""
     },
     "RARS_CPU" : {
         "name": "Resource-Adjusted R-Squared (CPU)", 
         "formula": "RARS(CPU)=(weightRS~*~normalizedRSquared) + (weightCpu~*~(1~-~\\frac{averageCpuUsage~-~minCpuUsage}{maxCpuUsage~-~minCpuUsage}))", 
+        "formulaBreakdown": {
+            "1": "weightRS = User assigned performance weight", 
+            "2": "weightCpu = User assigned external factor weight", 
+            "3": "normalizedRSScore = Min-max normalization of multiple model's R-Squared scores", 
+            "4": "averageCpuUsage = Average CPU usage of the chosen model during observation period",
+            "5": "minCpuUsage = Minimum CPU usage of any model during observation period",
+            "6": "maxCpuUsage = Maximum CPU usage of any model during observation period"
+        },
         "description": ""
     },
     "RARS_GPU" : {
         "name": "Resource-Adjusted R-Squared (GPU)", 
         "formula": "RARS(GPU)=(weight RS~*~normalizedRSquared) + (weightGpu~*~(1~-~\\frac{averageGpuUsage~-~minGpuUsage}{maxGpuUsage~-~minGpuUsage}))", 
+        "formulaBreakdown": {
+            "1": "weightRS = User assigned performance weight", 
+            "2": "weightGpu = User assigned external factor weight", 
+            "3": "normalizedRSScore = Min-max normalization of multiple model's R-Squared scores",  
+            "4": "averageGpuUsage = Average GPU usage of the chosen model during observation period",
+            "5": "minGpuUsage = Minimum GPU usage of any model during observation period",
+            "6": "maxGpuUsage = Maximum GPU usage of any model during observation period"
+        },
         "description": ""
     },
     "RARS_RAM" : {
         "name": "Resource-Adjusted R-Squared (RAM)", 
         "formula": "RARS(RAM)=(weight RS~*~normalizedRSquared) + (weightRam~*~(1~-~\\frac{averageRamUsage~-~minRamUsage}{maxRamUsage~-~minRamUsage}))", 
+        "formulaBreakdown": {
+            "1": "weightRS = User assigned performance weight", 
+            "2": "weightRam = User assigned external factor weight", 
+            "3": "normalizedRSScore = Min-max normalization of multiple model's R-Squared scores",
+            "4": "averageRamUsage = Average RAM usage of the chosen model during observation period",
+            "5": "minRamUsage = Minimum RAM usage of any model during observation period",
+            "6": "maxRamuUsage = Maximum RAM usage of any model during observation period"
+        },
         "description": ""
     },
     "RMSPECI" : {
         "name": "RMSPE-Cost Index", 
         "formula": "RMSPECI=costPerPercent~*~RMSPE", 
+        "formulaBreakdown": {
+            "1": "RMSPE = Root Mean Squared Percentage Error", 
+            "2": "costPerPercent = Estimated cost per percentage error differnce"
+        },
         "description": ""
     },
     "Model_Robustness": {
         "name": "Model Robustness", 
         "formula": "../images/robustGraph.png", 
+        "formulaBreakdown": "",
         "description": "placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder"
     }
 }
