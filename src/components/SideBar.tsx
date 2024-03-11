@@ -22,7 +22,7 @@ export const SideBar = ({
 
   return (
     <div className="sidebar">
-      <h3 className="sidebarMainTitle">External Factor Evaluation Framework</h3>
+      <h2 className="sidebarMainTitle">External Factor Evaluation Framework</h2>
       <h3>Select Weights</h3>
       <h4 className="sidebarWeight">External Factor Weight</h4>
       <select value={extWeight} onChange={handleExtWeightChange}>
