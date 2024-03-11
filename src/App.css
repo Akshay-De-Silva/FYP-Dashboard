@@ -28,11 +28,11 @@ html, body {
 
 .graph-containter {
   grid-area: graph;
-  border: 2px solid black;
+  border: 1px solid white;
 }
 
 .metric-container {
-  border: 2px solid black;
+  border: 1px solid white;
   display: grid;
   place-items: center;
 }
@@ -56,7 +56,6 @@ html, body {
 
 .metricResult {
   transform: translateY(-25px);
-  border: 1px solid black;
   border-radius: 5px;
   padding: 10px;
   background-color: #574c9a;
@@ -73,7 +72,7 @@ html, body {
 }
 
 .standard-metric {
-  border: 2px solid black;
+  border: 1px solid white;
   grid-area: standard;
   display: grid;
   place-items: center;
@@ -90,7 +89,6 @@ html, body {
   margin-bottom: 20px;
   margin-right: 30px; 
   transform: translateY(-30px);
-  border: 1px solid black;
   border-radius: 5px;
   padding: 10px;
   background-color: #574c9a;
@@ -100,7 +98,7 @@ html, body {
   padding: 1rem;
   width: 200px;
   grid-area: sidebar;
-  border: 2px solid black;
+  border: 1px solid white;
 }
 
 .sidebar h2 {
@@ -137,7 +135,7 @@ html, body {
 .sidebarMainTitle {
   margin: 0;
   padding: 8px;
-  border: 2px solid white;
+  border: 1px solid white;
   border-radius: 25px;
 }
 
@@ -196,6 +194,7 @@ select:hover {
   background-color: #483d8b;
   color: white;
   text-align: center;
+  border: 1px solid white;
 }
 
 .detailName {

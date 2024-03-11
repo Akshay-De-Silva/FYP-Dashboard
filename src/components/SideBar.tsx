@@ -1,4 +1,5 @@
 import "../App.css";
+import { model_logistic_regression, model_linear_regression } from "./ApiBase";
 
 interface SideBarProps {
   extWeight: number;
@@ -29,11 +30,13 @@ export const SideBar = ({
   const handleClassModel = (model: string) => {
     setTypeToClass();
     updateChosenModel(model);
+    return true;
   };
 
   const handleRegModel = (model: string) => {
     setTypeToReg();
     updateChosenModel(model);
+    return true;
   };
 
   return (
@@ -56,7 +59,10 @@ export const SideBar = ({
         <li>
           <button
             className="sideBtn"
-            onClick={() => handleClassModel("logistic_regression")}
+            onClick={() =>
+              handleClassModel("logistic_regression") &&
+              model_logistic_regression(extWeight, perfWeight)
+            }
           >
             Logistic Regression
           </button>
@@ -115,7 +121,10 @@ export const SideBar = ({
         <li>
           <button
             className="sideBtn"
-            onClick={() => handleRegModel("linear_regression")}
+            onClick={() =>
+              handleRegModel("linear_regression") &&
+              model_linear_regression(extWeight, perfWeight)
+            }
           >
             Linear Regression
           </button>
