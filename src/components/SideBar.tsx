@@ -39,6 +39,15 @@ export const SideBar = ({
     return true;
   };
 
+  //add handle fucntions for each model
+  const handleLogisticRegression = async () => {
+    await model_logistic_regression(extWeight, perfWeight);
+  };
+
+  const handleLinearRegression = async () => {
+    await model_linear_regression(extWeight, perfWeight);
+  };
+
   return (
     <div className="sidebar">
       <h2 className="sidebarMainTitle">External Factor Evaluation Framework</h2>
@@ -59,10 +68,10 @@ export const SideBar = ({
         <li>
           <button
             className="sideBtn"
-            onClick={() =>
-              handleClassModel("logistic_regression") &&
-              model_logistic_regression(extWeight, perfWeight)
-            }
+            onClick={() => {
+              handleClassModel("logistic_regression");
+              handleLogisticRegression();
+            }}
           >
             Logistic Regression
           </button>
@@ -121,10 +130,10 @@ export const SideBar = ({
         <li>
           <button
             className="sideBtn"
-            onClick={() =>
-              handleRegModel("linear_regression") &&
-              model_linear_regression(extWeight, perfWeight)
-            }
+            onClick={() => {
+              handleRegModel("linear_regression");
+              handleLinearRegression();
+            }}
           >
             Linear Regression
           </button>
