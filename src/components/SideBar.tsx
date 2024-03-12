@@ -9,6 +9,7 @@ interface SideBarProps {
   updateChosenModel: (model: string) => void;
   setTypeToClass: () => void;
   setTypeToReg: () => void;
+  updateModelResult: (modelResultData: any) => void;
 }
 
 const options = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9];
@@ -21,6 +22,7 @@ export const SideBar = ({
   updateChosenModel,
   setTypeToClass,
   setTypeToReg,
+  updateModelResult,
 }: SideBarProps) => {
   const handleExtWeightChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newExtWeight = parseFloat(e.target.value);
@@ -41,11 +43,13 @@ export const SideBar = ({
 
   //add handle fucntions for each model
   const handleLogisticRegression = async () => {
-    await model_logistic_regression(extWeight, perfWeight);
+    const results = await model_logistic_regression(extWeight, perfWeight);
+    return results;
   };
 
   const handleLinearRegression = async () => {
-    await model_linear_regression(extWeight, perfWeight);
+    const results = await model_linear_regression(extWeight, perfWeight);
+    return results;
   };
 
   return (
@@ -68,9 +72,10 @@ export const SideBar = ({
         <li>
           <button
             className="sideBtn"
-            onClick={() => {
+            onClick={async () => {
               handleClassModel("logistic_regression");
-              handleLogisticRegression();
+              const results = await handleLogisticRegression();
+              updateModelResult(results);
             }}
           >
             Logistic Regression
@@ -130,9 +135,10 @@ export const SideBar = ({
         <li>
           <button
             className="sideBtn"
-            onClick={() => {
+            onClick={async () => {
               handleRegModel("linear_regression");
-              handleLinearRegression();
+              const results = await handleLinearRegression();
+              updateModelResult(results);
             }}
           >
             Linear Regression

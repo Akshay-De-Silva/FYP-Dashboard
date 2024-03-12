@@ -1,5 +1,5 @@
 import "../App.css";
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import { Metric } from "./Metric";
 import { StandardMetric } from "./StandardMetric";
 import { SideBar } from "./SideBar";
@@ -10,6 +10,51 @@ import formula from "../jsons/formula.json";
 
 export const Dashboard = (props: { metricType: string }) => {
   const [chosenModel, setChosenModel] = useState("logistic_regression");
+  const [modelResult, setModelResult] = useState({
+    BATI: 0,
+    RAF1_CPU: 0,
+    RAF1_GPU: 0,
+    RAF1_RAM: 0,
+    F1CI: 0,
+    BRMSETI: 0,
+    RARS_CPU: 0,
+    RARS_GPU: 0,
+    RARS_RAM: 0,
+    RMSPECI: 0,
+    Accuracy: 0,
+    F1Score: 0,
+    Precision: 0,
+    Recall: 0,
+    MSE: 0,
+    RSME: 0,
+    MAE: 0,
+    R2: 0,
+  });
+
+  const updateModelResult = (
+    modelResultData: SetStateAction<{
+      BATI: number;
+      RAF1_CPU: number;
+      RAF1_GPU: number;
+      RAF1_RAM: number;
+      F1CI: number;
+      BRMSETI: number;
+      RARS_CPU: number;
+      RARS_GPU: number;
+      RARS_RAM: number;
+      RMSPECI: number;
+      Accuracy: number;
+      F1Score: number;
+      Precision: number;
+      Recall: number;
+      MSE: number;
+      RSME: number;
+      MAE: number;
+      R2: number;
+    }>
+  ) => {
+    setModelResult(modelResultData);
+  };
 
   const updateChosenModel = (model: string) => {
     setChosenModel(model);
@@ -148,6 +193,27 @@ export const Dashboard = (props: { metricType: string }) => {
         updateChosenModel={updateChosenModel}
         setTypeToClass={setTypeToClass}
         setTypeToReg={setTypeToReg}
+        updateModelResult={
+          updateModelResult as (
+            modelResultData: SetStateAction<{
+              BATI: number;
+              RAF1_CPU: number;
+              RAF1_GPU: number;
+              RAF1_RAM: number;
+              F1CI: number;
+              BRMSETI: number;
+              RARS_CPU: number;
+              RARS_GPU: number;
+              RARS_RAM: number;
+              RMSPECI: number;
+              Accuracy: number;
+              F1Score: number;
+              Precision: number;
+              Recall: number;
+              R2: number;
+            }>
+          ) => void
+        }
       />
       {metricType === Type.classification
         ? classMetrics.map((metric, index) => (
@@ -157,6 +223,9 @@ export const Dashboard = (props: { metricType: string }) => {
               formulaName={formula[metric.formulaName as keyof typeof formula]}
               result={metric.result}
               abbreviation={metric.formulaName}
+              modelResult={
+                modelResult[metric.formulaName as keyof typeof modelResult]
+              }
             />
           ))
         : regMetrics.map((metric, index) => (
@@ -166,6 +235,9 @@ export const Dashboard = (props: { metricType: string }) => {
               formulaName={formula[metric.formulaName as keyof typeof formula]}
               result={metric.result}
               abbreviation={metric.formulaName}
+              modelResult={
+                modelResult[metric.formulaName as keyof typeof modelResult]
+              }
             />
           ))}
       {metricType === Type.classification
@@ -205,6 +277,10 @@ export const Dashboard = (props: { metricType: string }) => {
             result.Precision ? result.Precision : defaultResults.Precision
           }
           result4={result.Recall ? result.Recall : defaultResults.Recall}
+          modelResult1={modelResult["Accuracy" as keyof typeof modelResult]}
+          modelResult2={modelResult["F1Score" as keyof typeof modelResult]}
+          modelResult3={modelResult["Precision" as keyof typeof modelResult]}
+          modelResult4={modelResult["Recall" as keyof typeof modelResult]}
         />
       ) : (
         <StandardMetric
@@ -216,6 +292,10 @@ export const Dashboard = (props: { metricType: string }) => {
           result2={result.RSME ? result.RSME : defaultResults.RSME}
           result3={result.MAE ? result.MAE : defaultResults.MAE}
           result4={result.R2 ? result.R2 : defaultResults.R2}
+          modelResult1={modelResult["MSE" as keyof typeof modelResult]}
+          modelResult2={modelResult["RSME" as keyof typeof modelResult]}
+          modelResult3={modelResult["MAE" as keyof typeof modelResult]}
+          modelResult4={modelResult["R2" as keyof typeof modelResult]}
         />
       )}
     </div>

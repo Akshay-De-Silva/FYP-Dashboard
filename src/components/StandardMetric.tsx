@@ -9,6 +9,10 @@ export const StandardMetric = (props: {
   result2: number;
   result3: number;
   result4: number;
+  modelResult1: number;
+  modelResult2: number;
+  modelResult3: number;
+  modelResult4: number;
 }) => {
   return (
     <div className="standard-metric">
@@ -16,19 +20,19 @@ export const StandardMetric = (props: {
       <div className="standard-metric-container">
         <div>
           <h2 className="metric-name">{props.name1}</h2>
-          <h2 className="metric-result">{props.result1}</h2>
+          <h2 className="metric-result">{props.modelResult1}</h2>
         </div>
         <div>
           <h2 className="metric-name">{props.name2}</h2>
-          <h2 className="metric-result">{props.result2}</h2>
+          <h2 className="metric-result">{props.modelResult2}</h2>
         </div>
         <div>
           <h2 className="metric-name">{props.name3}</h2>
-          <h2 className="metric-result">{props.result3}</h2>
+          <h2 className="metric-result">{props.modelResult3}</h2>
         </div>
         <div>
           <h2 className="metric-name">{props.name4}</h2>
-          <h2 className="metric-result">{props.result4}</h2>
+          <h2 className="metric-result">{props.modelResult4}</h2>
         </div>
       </div>
     </div>

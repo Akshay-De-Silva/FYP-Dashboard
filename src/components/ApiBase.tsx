@@ -11,7 +11,7 @@ export async function model_logistic_regression(
       weight_e,
       weight_p,
     });
-    console.log(response.data);
+    return response.data;
   } catch (error) {
     console.error("Error fetching data for logistic regression:", error);
   }
@@ -26,7 +26,7 @@ export async function model_linear_regression(
       weight_e,
       weight_p,
     });
-    console.log(response.data);
+    return response.data;
   } catch (error) {
     console.error("Error fetching data for linear regression:", error);
   }

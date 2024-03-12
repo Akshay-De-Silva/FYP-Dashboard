@@ -8,6 +8,7 @@ export const Metric = (props: {
   formulaName: string;
   result: number;
   abbreviation: string;
+  modelResult: number;
 }) => {
   const navigate = useNavigate();
 
@@ -21,7 +22,7 @@ export const Metric = (props: {
       <p className="formula" onClick={handleClick}>
         <BlockMath math={props.formulaName} />
       </p>
-      <h2 className="metricResult">{props.result}</h2>
+      <h2 className="metricResult">{props.modelResult}</h2>
     </div>
   );
 };
