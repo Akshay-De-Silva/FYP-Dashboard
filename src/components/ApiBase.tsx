@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://127.0.0.1:5000";
+const API_BASE_URL = "https://ml-hosting-e6odm.ondigitalocean.app/";
 
 export async function model_logistic_regression(
   weight_e: number,

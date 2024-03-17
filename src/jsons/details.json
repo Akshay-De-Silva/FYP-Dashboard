@@ -66,7 +66,7 @@
     "BRMSETI" : {
         "name": "Balanced RMSE Time Index", 
         "type": "regression",
-        "formula": "BRMSETI=weightRmse~*~normalizedRmse~+~weightTime~*~(1~-~normalizedTime)", 
+        "formula": "BRMSETI=weightRmse~*~(1-normalizedRmse)~+~weightTime~*~(1~-~normalizedTime)", 
         "formulaBreakdown": {
             "1": "weightRmse = User assigned performance weight", 
             "2": "weightTime = User assigned external factor weight", 

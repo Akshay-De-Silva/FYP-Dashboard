@@ -121,14 +121,6 @@ export const SideBar = ({
             Support Vector Machine
           </button>
         </li>
-        <li>
-          <button
-            className="sideBtn"
-            onClick={() => console.log("Neural Network")}
-          >
-            Neural Network
-          </button>
-        </li>
       </ul>
       <h4 className="sidebarTitle">Regression</h4>
       <ul>
@@ -166,6 +158,14 @@ export const SideBar = ({
             onClick={() => console.log("Bayesian Ridge Regression")}
           >
             Bayesian Ridge Regression
+          </button>
+        </li>
+        <li>
+          <button
+            className="sideBtn"
+            onClick={() => console.log("Elastic Net Regression")}
+          >
+            Elastic Net Regression
           </button>
         </li>
       </ul>
