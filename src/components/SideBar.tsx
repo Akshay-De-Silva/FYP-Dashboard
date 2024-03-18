@@ -1,5 +1,17 @@
 import "../App.css";
-import { model_logistic_regression, model_linear_regression } from "./ApiBase";
+import {
+  model_logistic_regression,
+  model_linear_regression,
+  model_knn,
+  model_dt,
+  model_rf,
+  model_nb,
+  model_svm,
+  model_rr,
+  model_lasso,
+  model_brr,
+  model_en,
+} from "./ApiBase";
 
 interface SideBarProps {
   extWeight: number;
@@ -52,6 +64,51 @@ export const SideBar = ({
     return results;
   };
 
+  const handleKnn = async () => {
+    const results = await model_knn(extWeight, perfWeight);
+    return results;
+  };
+
+  const handleDt = async () => {
+    const results = await model_dt(extWeight, perfWeight);
+    return results;
+  };
+
+  const handleRf = async () => {
+    const results = await model_rf(extWeight, perfWeight);
+    return results;
+  };
+
+  const handleNb = async () => {
+    const results = await model_nb(extWeight, perfWeight);
+    return results;
+  };
+
+  const handleSvm = async () => {
+    const results = await model_svm(extWeight, perfWeight);
+    return results;
+  };
+
+  const handleRr = async () => {
+    const results = await model_rr(extWeight, perfWeight);
+    return results;
+  };
+
+  const handleLasso = async () => {
+    const results = await model_lasso(extWeight, perfWeight);
+    return results;
+  };
+
+  const handleBrr = async () => {
+    const results = await model_brr(extWeight, perfWeight);
+    return results;
+  };
+
+  const handleEn = async () => {
+    const results = await model_en(extWeight, perfWeight);
+    return results;
+  };
+
   return (
     <div className="sidebar">
       <h2 className="sidebarMainTitle">External Factor Evaluation Framework</h2>
@@ -84,7 +141,11 @@ export const SideBar = ({
         <li>
           <button
             className="sideBtn"
-            onClick={() => console.log("K-Nearest Neighbors")}
+            onClick={async () => {
+              handleClassModel("knn");
+              const results = await handleKnn();
+              updateModelResult(results);
+            }}
           >
             K-Nearest Neighbors
           </button>
@@ -92,7 +153,11 @@ export const SideBar = ({
         <li>
           <button
             className="sideBtn"
-            onClick={() => console.log("Decision Tree")}
+            onClick={async () => {
+              handleClassModel("dt");
+              const results = await handleDt();
+              updateModelResult(results);
+            }}
           >
             Decision Tree
           </button>
@@ -100,7 +165,11 @@ export const SideBar = ({
         <li>
           <button
             className="sideBtn"
-            onClick={() => console.log("Random Forest")}
+            onClick={async () => {
+              handleClassModel("rf");
+              const results = await handleRf();
+              updateModelResult(results);
+            }}
           >
             Random Forest
           </button>
@@ -108,7 +177,11 @@ export const SideBar = ({
         <li>
           <button
             className="sideBtn"
-            onClick={() => console.log("Naive Bayes")}
+            onClick={async () => {
+              handleClassModel("nb");
+              const results = await handleNb();
+              updateModelResult(results);
+            }}
           >
             Naive Bayes
           </button>
@@ -116,7 +189,11 @@ export const SideBar = ({
         <li>
           <button
             className="sideBtn"
-            onClick={() => console.log("Support Vector Machine")}
+            onClick={async () => {
+              handleClassModel("svm");
+              const results = await handleSvm();
+              updateModelResult(results);
+            }}
           >
             Support Vector Machine
           </button>
@@ -139,7 +216,11 @@ export const SideBar = ({
         <li>
           <button
             className="sideBtn"
-            onClick={() => console.log("Ridge Regression")}
+            onClick={async () => {
+              handleRegModel("rr");
+              const results = await handleRr();
+              updateModelResult(results);
+            }}
           >
             Ridge Regression
           </button>
@@ -147,7 +228,11 @@ export const SideBar = ({
         <li>
           <button
             className="sideBtn"
-            onClick={() => console.log("Lasso Regression")}
+            onClick={async () => {
+              handleRegModel("lasso");
+              const results = await handleLasso();
+              updateModelResult(results);
+            }}
           >
             Lasso Regression
           </button>
@@ -155,7 +240,11 @@ export const SideBar = ({
         <li>
           <button
             className="sideBtn"
-            onClick={() => console.log("Bayesian Ridge Regression")}
+            onClick={async () => {
+              handleRegModel("brr");
+              const results = await handleBrr();
+              updateModelResult(results);
+            }}
           >
             Bayesian Ridge Regression
           </button>
@@ -163,7 +252,11 @@ export const SideBar = ({
         <li>
           <button
             className="sideBtn"
-            onClick={() => console.log("Elastic Net Regression")}
+            onClick={async () => {
+              handleRegModel("en");
+              const results = await handleEn();
+              updateModelResult(results);
+            }}
           >
             Elastic Net Regression
           </button>

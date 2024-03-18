@@ -9,7 +9,7 @@ import robustness from "../jsons/robustness.json";
 import formula from "../jsons/formula.json";
 
 export const Dashboard = (props: { metricType: string }) => {
-  const [chosenModel, setChosenModel] = useState("logistic_regression");
+  const [chosenModel, setChosenModel] = useState("default");
   const [modelResult, setModelResult] = useState({
     BATI: 0,
     RAF1_CPU: 0,
@@ -166,7 +166,15 @@ export const Dashboard = (props: { metricType: string }) => {
     },
   ];
 
+  //add graph data here for each model
   const robustnessData = [
+    {
+      name: "default",
+      zero: robustness.default[0],
+      quarter: robustness.default[1],
+      half: robustness.default[2],
+      third: robustness.default[3],
+    },
     {
       name: "logistic_regression",
       zero: robustness.logistic_regression[0],
@@ -180,6 +188,69 @@ export const Dashboard = (props: { metricType: string }) => {
       quarter: robustness.linear_regression[1],
       half: robustness.linear_regression[2],
       third: robustness.linear_regression[3],
+    },
+    {
+      name: "knn",
+      zero: robustness.knn[0],
+      quarter: robustness.knn[1],
+      half: robustness.knn[2],
+      third: robustness.knn[3],
+    },
+    {
+      name: "dt",
+      zero: robustness.dt[0],
+      quarter: robustness.dt[1],
+      half: robustness.dt[2],
+      third: robustness.dt[3],
+    },
+    {
+      name: "rf",
+      zero: robustness.rf[0],
+      quarter: robustness.rf[1],
+      half: robustness.rf[2],
+      third: robustness.rf[3],
+    },
+    {
+      name: "nb",
+      zero: robustness.nb[0],
+      quarter: robustness.nb[1],
+      half: robustness.nb[2],
+      third: robustness.nb[3],
+    },
+    {
+      name: "svm",
+      zero: robustness.svm[0],
+      quarter: robustness.svm[1],
+      half: robustness.svm[2],
+      third: robustness.svm[3],
+    },
+    {
+      name: "rr",
+      zero: robustness.rr[0],
+      quarter: robustness.rr[1],
+      half: robustness.rr[2],
+      third: robustness.rr[3],
+    },
+    {
+      name: "lasso",
+      zero: robustness.lasso[0],
+      quarter: robustness.lasso[1],
+      half: robustness.lasso[2],
+      third: robustness.lasso[3],
+    },
+    {
+      name: "brr",
+      zero: robustness.brr[0],
+      quarter: robustness.brr[1],
+      half: robustness.brr[2],
+      third: robustness.brr[3],
+    },
+    {
+      name: "en",
+      zero: robustness.en[0],
+      quarter: robustness.en[1],
+      half: robustness.en[2],
+      third: robustness.en[3],
     },
   ];
 
